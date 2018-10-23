@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="contact">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="-1.0" prefHeight="338.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TreeView fx:id="treeViewContact" onMouseClicked="#onTreeViewContactCliked" prefHeight="337.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane fx:id="contactPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="50.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRENOM : " />
+                                    <Text layoutX="75.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM : " />
+                                    <Text layoutX="78.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" />
+                                    <Button layoutX="54.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#onDeleteContactClicked" text="Supprimer contact" />
+                                    <Text fx:id="prenomPrinted" layoutX="120.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                    <Text fx:id="nomPrinted" layoutX="120.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                    <Text fx:id="datePrinted" layoutX="120.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="ajouter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="123.0" layoutY="51.0" prefHeight="35.0" prefWidth="355.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" />
+                              <TextField fx:id="nom" layoutX="76.0" layoutY="4.0" prefHeight="27.0" prefWidth="265.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="123.0" layoutY="96.0" prefHeight="35.0" prefWidth="355.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom :" />
+                              <TextField fx:id="prenom" layoutX="76.0" layoutY="4.0" prefHeight="27.0" prefWidth="265.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="123.0" layoutY="144.0" prefHeight="35.0" prefWidth="355.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date : " />
+                              <DatePicker fx:id="date" layoutX="76.0" layoutY="1.0" prefHeight="27.0" prefWidth="265.0" />
+                           </children>
+                        </Pane>
+                        <Button layoutX="136.0" layoutY="195.0" mnemonicParsing="false" onMouseClicked="#onAddContactCliked" text="Ajouter contact" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
